@@ -1,5 +1,5 @@
 {% for blog in blogs %}
-  {{blog.title}}
+  <a href="{{blog.get_absolute_url}}">{{blog.title}}</a>
   {{blog.body}}
   <hr>
 {% endfor %}

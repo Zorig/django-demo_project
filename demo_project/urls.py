@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from blog.views import all_blog
+from blog.views import all_blog, single_blog
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_blog, name="all_blog"),
+    url(r'^(?P<blog_slug>[-\w]+)/', single_blog, name="single_blog"),
 ]
