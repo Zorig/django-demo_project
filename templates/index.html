@@ -1,5 +1,16 @@
-{% for blog in blogs %}
-  <a href="{{blog.get_absolute_url}}">{{blog.title}}</a>
-  {{blog.body}}
-  <hr>
-{% endfor %}
+{% extends 'base.html' %}
+{% block content %}
+  <div class="grid-x">
+  {% for blog in blogs %}
+    <div class="cell">
+      <div class="media-object">
+        <div class="media-object-section">
+          <h4><a href="{{blog.get_absolute_url}}">{{blog.title|capfirst}}</a></h4>
+          <p>{{blog.body|truncatechars:'140'}}</p>
+          <a href="{{blog.get_absolute_url}}">Үргэлжлэл...</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}
