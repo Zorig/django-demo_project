@@ -12,5 +12,15 @@
       </div>
     </div>
   {% endfor %}
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      {% if blogs.has_previous %}
+      <li class="pagination-next"><a href="?page={{ blogs.previous_page_number }}" aria-label="Next page">Ѳмнѳх</a></li>
+      {% endif %}
+      {% if blogs.has_next %}
+      <li class="pagination-next"><a href="?page={{ blogs.next_page_number }}" aria-label="Next page">Дараах</a></li>
+      {% endif %}
+    </ul>
+  </nav>
   </div>
 {% endblock content %}
