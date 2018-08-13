@@ -3,10 +3,12 @@
   <div class="grid-x">
   {% for blog in blogs %}
     <div class="cell">
-      <div class="media-object">
+      <div class="media-object stack-for-small">
         <div class="media-object-section">
         {%if blog.cover %} <!--зураг байвал доорх img гарна-->
-        <img src={{blog.cover.url}} alt="{{blog.title}}" className="thumbnail" />
+        <div class="thumbnail">
+          <img src={{blog.cover.url}} alt="{{blog.title}}" class="cover"/>
+        </div>
         {% endif %} <!--нѳхцѳл шалгалт дуусна-->
           <h4><a href="{{blog.get_absolute_url}}">{{blog.title|capfirst}}</a></h4>
           <p>{{blog.body|truncatechars:'140'}}</p>
