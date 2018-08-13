@@ -7,10 +7,11 @@ class Blog(models.Model):
     body = models.TextField()
     author = models.CharField(max_length=50, null=True)
     slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
+    cover = models.ImageField(upload_to="blog_cover", null=True, blank=True)
 
     def __str__(self):
         return self.title + '-' + self.author
-    
+
     def get_absolute_url(self):
         return "/%s" % self.slug
 

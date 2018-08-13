@@ -5,6 +5,9 @@
     <div class="cell">
       <div class="media-object">
         <div class="media-object-section">
+        {%if blog.cover %} <!--зураг байвал доорх img гарна-->
+        <img src={{blog.cover.url}} alt="{{blog.title}}" className="thumbnail" />
+        {% endif %} <!--нѳхцѳл шалгалт дуусна-->
           <h4><a href="{{blog.get_absolute_url}}">{{blog.title|capfirst}}</a></h4>
           <p>{{blog.body|truncatechars:'140'}}</p>
           <a href="{{blog.get_absolute_url}}">Үргэлжлэл...</a>
