@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=50, null=True)
     body = models.TextField()
     author = models.CharField(max_length=50, null=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
 
     def __str__(self):
         return self.title + '-' + self.author
